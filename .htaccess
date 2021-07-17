@@ -1,0 +1,48 @@
+php_value error_reporting -1
+php_value display_errors on
+AddDefaultCharset utf-8
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./?%{QUERY_STRING}
+
+# Один 301 редирект на без www и с слешем на конце адреса
+RewriteCond %{REQUEST_URI} !\?
+RewriteCond %{REQUEST_URI} !\&
+RewriteCond %{REQUEST_URI} !\=
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !\/$
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ http://%1/$1/ [L,R=301]
+
+RewriteCond %{REQUEST_URI} !\?
+RewriteCond %{REQUEST_URI} !\&
+RewriteCond %{REQUEST_URI} !\=
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} ![^\/]$
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
+RewriteCond %{REQUEST_URI} !\?
+RewriteCond %{REQUEST_URI} !\&
+RewriteCond %{REQUEST_URI} !\=
+RewriteCond %{REQUEST_URI} !\.
+RewriteCond %{REQUEST_URI} !\/$
+RewriteCond %{HTTP_HOST} ^([^www].*)$
+RewriteRule ^(.*)$ http://%1/$1/ [L,R=301]
+
+# 301 редирект всех адресов с index.php и GET параметрами на страницы только с GET
+RewriteCond %{REQUEST_URI} /index.php
+RewriteRule ^(.*)$ http://site.ru/ [R=301,L]
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  Options -Indexes
+  RewriteRule .htaccess - [F]
+</IfModule>
+
+#<IfModule dir_module>
+    #DirectoryIndex index.php
+#</IfModule>

@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/Open_Sans/OpenSans-Regular.woff) format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/Open_Sans/OpenSans-SemiBold.woff) format("woff");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(fonts/Open_Sans/OpenSans-Bold.woff) format("woff");
+    font-weight: 700;
+}
+
+/* header */
+.header-container {
+    margin: 0 auto;
+    max-width: 1024px;
+    background: #2d3136;
+    color: #ffffff;
+}
+
+/* main */
+.main-container {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+@media screen and (min-width: 1024px) {
+    .main-container {
+        max-width: 1024px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.main-block__wrapper {
+    min-height: 980px;
+    height: 100vh;
+    padding: 55px 40px 0 40px;
+    background-color: #adadad;
+}
+@media screen and (min-width: 960px) {
+    .main-block__wrapper {
+        min-height: 650px;
+    }
+}
+.btn {
+    padding: 20px 77px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    background-color: #ff0000;
+    color: #d7d7d7;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* form */
+.form__block_body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+.form__block_header {
+    margin-top: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+@media screen and (min-width: 480px) {
+    .form__block_header {
+        margin-bottom: 35px;
+        font-size: 35px;
+    }
+}
+.form__block_div {
+    width: 100%;
+    order: 3;
+}
+@media screen and (min-width: 960px) {
+    .form__block_div {
+        width: 40%;
+    }
+}
+.form__block_div form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form__block_div form .form-label {
+    display: block;
+    padding: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    color: #000000;
+}
+@media screen and (min-width: 480px) {
+    .form__block_div form .form-label {
+        font-size: 16px;
+    }
+}
+.form__block_div form .form-input {
+    display: block;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    color: #adadad;
+    outline: none;
+    border: 1px solid #b5b5b5;
+    border-radius: 7px;
+}
+@media screen and (min-width: 480px) {
+    .form__block_div form .form-input {
+        font-size: 20px;
+    }
+}
+.form__block_div form .form-input--position {
+    margin-bottom: 30px;
+}
+.form__block_div form .form-input:focus {
+    outline: none;
+}
+.form__block_div form .submit-button {
+    display: block;
+    padding: 25px 20px;
+    margin-bottom: 12px;
+    width: 100%;
+    /*background-color: #3cc36d;*/
+    background: linear-gradient(to bottom, rgb(56,215,114), rgb(59,198,110));
+    color: #ffffff;
+    border-color: transparent;
+    border-radius: 7px;
+    box-shadow: 0px 7px 3px -3px rgb(54,170,96);
+    text-align: left;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+}
+@media screen and (min-width: 480px) {
+    .form__block_div form .submit-button {
+        font-size: 25px;
+    }
+}
+.form__block_div form .submit-button span {
+    position: relative;
+}
+@media screen and (min-width: 480px) {
+    .form__block_div form .submit-button span::before {
+        right: -45px;
+    }
+}
+.form__block_div form .data-info {
+    display: none;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    /*text-transform: uppercase;*/
+}
+@media screen and (min-width: 480px) {
+    .form__block_div form .data-info {
+        display: block;
+    }
+}
+.form__block_div form .data-info span {
+    margin-right: 15px;
+}
+
+
+/* form responses */
+.form-response-block {
+}
